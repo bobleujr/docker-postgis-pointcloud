@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+mkdir pointcloud
 cd /pointcloud
 chmod 700 /etc/postgresql/9.6/main/postgresql.conf
 wget -O pointcloud.tar.gz "https://github.com/pgpointcloud/pointcloud/archive/master.tar.gz" \
