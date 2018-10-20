@@ -16,7 +16,7 @@ docker build -t your_image_name git://github.com/bobleujr/docker-postgis-pointcl
 ```
 
 To create a running container do:
-
+ 
 ```
 docker run --name container_name -p 25432:5432 -d -t bobleujr/pointcloudpostgis
 ```
