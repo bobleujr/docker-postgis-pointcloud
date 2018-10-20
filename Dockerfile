@@ -26,7 +26,6 @@ ADD setup-replication.sh /
 ADD setup-ssl.sh /
 ADD setup-user.sh /
 ADD setup-pointcloud.sh /
-ADD pointcloud/ /pointcloud/
 RUN chmod +x /*.sh
 
 
