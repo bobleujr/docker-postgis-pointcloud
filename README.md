@@ -1,6 +1,6 @@
 # [Docker PostGIS](https://github.com/kartoza/docker-postgis) + [PointCloud](https://github.com/pgpointcloud/pointcloud)
 
-Repo containing the code for a Docker image containing PostGIS and PointCloud, based on PostgreSQL 9.6.
+Repo containing the code for a Docker image containing PostGIS (2.4) and PointCloud (1.2.0), based on PostgreSQL 9.6.
 
 ## How to run
 
