@@ -1,6 +1,6 @@
 #--------- Generic stuff all our Dockerfiles should start with so we get caching ------------
 FROM debian:stable
-MAINTAINER Tim Sutton<tim@kartoza.com>
+MAINTAINER Paulo Tabarro<paulogtabarro@gmail.com>
 
 RUN apt -y update; apt -y install gnupg2 wget ca-certificates rpl pwgen
 RUN sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
