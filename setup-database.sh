@@ -62,8 +62,7 @@ else
 	su - postgres -c "psql -c \"$CMD\""
 	echo "Loading postgis extension"
 	su - postgres -c "psql template_postgis -c 'CREATE EXTENSION postgis;'"
-	su - postgres -c "psql template_postgis -c 'CREATE EXTENSION pointcloud;'"
-	
+
 	if [[ ${HSTORE} == "true" ]]
 	then
 		echo "Enabling hstore in the template"
@@ -80,6 +79,17 @@ else
 	echo "Loading legacy sql"
 	su - postgres -c "psql template_postgis -f ${SQLDIR}/legacy_minimal.sql" || true
 	su - postgres -c "psql template_postgis -f ${SQLDIR}/legacy_gist.sql" || true
+fi
+
+
+RESULT=`su - postgres -c "psql -l | grep -w template_pointcloud | wc -l"`
+if [[ ${RESULT} == '1' ]]
+then
+	echo "Pointcloud already exists.."
+else
+	echo "Pointcloud is missing, installing"
+	su - postgres -c "createdb template_pointcloud -E UTF8 -T template0"
+	su - postgres -c "psql template_pointcloud -c 'CREATE EXTENSION pointcloud;'"
 fi
 
 # Setup user
